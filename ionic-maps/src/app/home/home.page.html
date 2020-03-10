@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar primary="color">
+    <ion-title>
+      Miles Tracker
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <button ion-button full icon-left (click)="startTracking()" *ngIf="!isTracking"></button>
+  <ion-icon name="locate">Start Trip</ion-icon>
+
+  <button ion-button full icon-left (click)="stopTracking()" *ngIf="isTracking"></button>
+  <ion-icon name="hand">Stop Trip</ion-icon>
+
+  <div #map></div>
+  <ion-list></ion-list>
+
+</ion-content>
