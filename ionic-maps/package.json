@@ -61,7 +61,7 @@
     "plugins": {
       "cordova-sqlite-storage": {},
       "cordova-plugin-geolocation": {
-        "GEOLOCATION_USAGE_DESCRIPTION": "Miles Tracker"
+        "GEOLOCATION_USAGE_DESCRIPTION": "To track your walks"
       }
     }
   }
