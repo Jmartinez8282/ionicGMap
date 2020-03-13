@@ -7,11 +7,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button full icon-left (click)="startTracking()" *ngIf="!isTracking"></ion-button>
-  <ion-icon name="locate">Start Trip</ion-icon>
+  <ion-button full icon-left (click)="startTracking()" *ngIf="!isTracking"> <ion-icon name="locate"></ion-icon>Start Trip</ion-button>
+ 
 
-  <ion-button full icon-left (click)="stopTracking()" *ngIf="isTracking"></ion-button>
-  <ion-icon name="hand">Stop Trip</ion-icon>
+  <ion-button full icon-left (click)="stopTracking()" *ngIf="isTracking"><ion-icon name="hand-left-outline"></ion-icon>Stop Trip</ion-button>
+  
 
   <div #map id="map"></div>
   <ion-list>
@@ -19,7 +19,7 @@
     <ion-item *ngFor="let route of previousTracks">
       {{route.finished | date }},{{route.path.length}} WayPoints
     </ion-item>
-    <ion-button clear item-end (click)="showHistoricRoute(route.path)">View Route</ion-button>
+    <ion-button clear item-end (click)="showHistoryRoute(route.path)">View Route</ion-button>
   </ion-list>
 
 </ion-content>

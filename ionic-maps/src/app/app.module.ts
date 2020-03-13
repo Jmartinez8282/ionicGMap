@@ -25,9 +25,11 @@ import { HomePage } from './home/home.page';
     IonicStorageModule,
     HomePage,
     ErrorHandler,
+    BrowserModule,
     
     
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Geolocation
   ],
   bootstrap: [AppComponent]
 })

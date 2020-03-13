@@ -12,8 +12,8 @@ declare var google;
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  @ViewChild('map',{static:false})
-  mapElement: ElementRef;
+  @ViewChild('map',{static:false})mapElement: ElementRef;
+  
   map:any;
 currentMapTrack = null;
 isTracking = false;
@@ -28,7 +28,7 @@ positionSubscription:Subscription
       this.loadHistoricRoutes();
     let mapOptions = {
       zoom: 13,
-      mapTypeId: google.maps.mapTypeId.ROADMAP,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl:false,
       streeViewControl:false,
       fullScreenControl:false,
@@ -39,7 +39,9 @@ positionSubscription:Subscription
       let latLng = new google.maps.LatLng(pos.coords.latitude,pos.coords.longitude);
       this.map.setCenter(latLng);
       this.map.setZoom(15);
-    })
+    }).catch((error)=>{
+      console.log('Error getting location',error);
+    });
     });
   }
   loadHistoricRoutes(){
